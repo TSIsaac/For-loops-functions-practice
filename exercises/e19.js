@@ -5,7 +5,8 @@
 // NOTE: You can NOT use the array.reverse() method in your code
 
 export function reverseArray(array) {
-  // Your code goes here...
+  const arrayReverse = array.reverse();
+  return arrayReverse;
 
 }
 

@@ -5,8 +5,8 @@
 // NOTE: You can NOT use the array.concat() method in your code
 
 export function concatArrays(arr1, arr2) {
-  // Your code goes here...
-
+  const arr3 = arr1.concat(arr2);
+  return arr3;
 }
 
 
