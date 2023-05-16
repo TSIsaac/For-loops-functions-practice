@@ -5,9 +5,14 @@
 // NOTE: You can NOT use the array.join(), array.toString(), and array.replace() methods in your code
 
 export function joinToString(array, separator) {
-    const elements = array;
-    const newString = elements.join(separator);
-    return newString;
+    let result = "";
+  for (let i = 0; i < array.length; i++) {
+    result += array[i];
+    if (i !== array.length - 1) {
+      result += separator;
+    }
+  }
+  return result;
 }
 
 // === TEST YOURSELF ===

@@ -6,8 +6,12 @@
 // NOTE: You can NOT use the array.includes() method in your code
 
 export function doesArrayInclude(array, value) {
-  const isValueInArray = array.includes(value);
-  return isValueInArray;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === value) {
+      return true;
+    }
+  }
+  return false;
 
 }
 

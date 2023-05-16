@@ -6,8 +6,20 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  const flatArrays = array.flat();
-  return flatArrays;
+  const result = [];
+
+  function flatten(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      if (Array.isArray(arr[i])) {
+        flatten(arr[i]); // Recursive call for nested arrays
+      } else {
+        result.push(arr[i]); // Push non-array elements to the result array
+      }
+    }
+  }
+
+  flatten(array);
+  return result;
 
 }
 

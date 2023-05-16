@@ -5,7 +5,16 @@
 // NOTE: You can NOT use the array.concat() method in your code
 
 export function concatArrays(arr1, arr2) {
-  const arr3 = arr1.concat(arr2);
+  const arr3 = [];
+  
+  for (let i = 0; i < arr1.length; i++) {
+    arr3.push(arr1[i]);
+  }
+  
+  for (let i = 0; i < arr2.length; i++) {
+    arr3.push(arr2[i]);
+  }
+  
   return arr3;
 }
 

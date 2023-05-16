@@ -9,8 +9,20 @@ export function getClientsWithWrongBalance(array) {
   const clientsWithWrongBalance = [];
 
   for (const account of array) {
-    const depositsSum = account.deposits ? account.deposits.reduce((sum, deposit) => sum + deposit, 0) : 0;
-    const withdrawalsSum = account.withdrawals ? account.withdrawals.reduce((sum, withdrawal) => sum + withdrawal, 0) : 0;
+    let depositsSum = 0;
+    if (account.deposits) {
+      for (const deposit of account.deposits) {
+        depositsSum += deposit;
+      }
+    }
+
+    let withdrawalsSum = 0;
+    if (account.withdrawals) {
+      for (const withdrawal of account.withdrawals) {
+        withdrawalsSum += withdrawal;
+      }
+    }
+
     const balance = account.balance || 0;
 
     if (depositsSum - withdrawalsSum !== balance) {
