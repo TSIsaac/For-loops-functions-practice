@@ -9,7 +9,7 @@ export function getClientWithLeastPositiveBalance(array) {
   for (let user of array) {
     if (user.balance <= 0) {
       continue;
-    } else if (leastBalance / length === 0) {
+    } else if (leastBalance.length === 0) {
       leastBalance[0] = user;    
     } else if (user.balance < leastBalance[0].balance){
       leastBalance[0] = user;
